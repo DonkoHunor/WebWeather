@@ -1,4 +1,4 @@
-import { RootObject } from './Interface';
+import { CurrentWeather } from './CWInterface';
 import './style.css'
 
 async function load(){
@@ -6,7 +6,7 @@ async function load(){
     console.log("Status: " + result.status);
     console.log("Success?: " + result.ok);
     
-    let content = await result.json() as RootObject;
+    let content = await result.json() as CurrentWeather;
     console.log(content.location.name);
     console.log(content.current.condition.text);
     console.log(content.current.temp_c);
