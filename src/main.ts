@@ -12,7 +12,10 @@ async function load(){
     console.log(content.current.temp_c);
     console.log(content.current.condition.icon);
     
-    
+    (document.getElementById("varos")! as HTMLInputElement).value = content.location.name;
+    (document.getElementById("homerseklet")! as HTMLInputElement).value = content.current.temp_c.toString();
+    (document.getElementById("felhozet")! as HTMLInputElement).value = content.current.condition.text;
+    document.getElementById("icon")!.setAttribute("src", "//cdn.weatherapi.com/weather/64x64/night/113.png");
 }
 
 document.addEventListener("DOMContentLoaded", load);
