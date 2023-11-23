@@ -1,4 +1,55 @@
-*{
-  background-color: #303030;
+:root{
+  --border-color: linear-gradient(transparent, rgb(150, 100, 50)) 1;
+  --text-color: rgba(255, 206, 122, 0.8);
+  ;
+}
+body{
+  background-color: black;
+  background-image: url("/rain.gif");
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-size: cover;
   color: white;
+}
+*{
+  box-sizing: border-box;
+}
+nav{
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), transparent);
+  border-width: 2px;
+  border-style: solid;
+  border-image: var(--border-color);
+  height: 70px;
+  display: flex;
+  margin-bottom: 20px;
+}
+nav > .nav-logo{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+nav > .nav-section{
+  flex-basis: calc(95% / 3);
+  padding: 2rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 2px solid;
+  border-image: var(--border-color);
+  
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.4rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: var(--text-color);
+}
+nav > .nav-section:hover{
+  background-color: rgba(255, 195, 116, 0.472);
+  color: rgb(0, 0, 0);
+  transition: 200ms;
+}
+.display-weather{
+  background-color: rgba(0, 0, 0, 0.5);
 }

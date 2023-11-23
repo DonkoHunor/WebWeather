@@ -2,17 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css">
     <title>WebWeather</title>
   </head>
   <body>
-    <div id="app">
-      <p>Város: <input type="text" id="varos" readonly="true"></p>
-      <p>Hőméréklet: <input type="text" id="homerseklet" readonly="true"></p>
-      <p>Felhőzet: <input type="text" id="felhozet" readonly="true"></p>
-      <img src="" alt="icon" id="icon">
-    </div>
+    <nav class="nav-box">
+      <div id="btnLogo" class="nav-logo">LOGO</div>
+      <div id="btnCurrent" class="nav-section">Current Weather</div>
+      <div id="btnForecast" class="nav-section">Weather Forecast</div>
+      <div id="btnContact" class="nav-section">Contact Us</div>
+    </nav>
+
+    <div class="display-weather">Weather Details Go HERE</div>
+    
+
+
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
