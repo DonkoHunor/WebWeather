@@ -8,6 +8,10 @@ async function load(){
     console.log("Success?: " + result.ok);
     
     let content = await result.json() as CurrentWeather;
+    (document.getElementById("cwTemp")! as HTMLElement).textContent = content.current.temp_c.toString();
+    (document.getElementById("cwCond")! as HTMLElement).textContent = content.current.condition.text;
+    (document.getElementById("cwCloud")! as HTMLElement).textContent = content.current.cloud.toString();
+    (document.getElementById("cwHumid")! as HTMLElement).textContent = content.current.humidity.toString();
     
 }
 

@@ -15,13 +15,15 @@ body{
   box-sizing: border-box;
 }
 nav{
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 15vw;
+  height: 70px;
+  width: 70vw;
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), transparent);
   border-width: 2px;
   border-style: solid;
   border-image: var(--border-color);
-  height: 70px;
-  display: flex;
-  margin-bottom: 20px;
 }
 nav > .nav-logo{
   display: flex;
@@ -53,4 +55,11 @@ nav > .nav-section:hover{
 }
 .display-weather{
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+.weather-card{
+  display: flex;
+  flex-basis: calc(100%/4);
+  justify-content: center;
+  align-items: center;
 }
