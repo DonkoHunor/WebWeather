@@ -10,10 +10,10 @@ async function load(){
     console.log("Success?: " + result.ok);
     
     let content = await result.json() as WeatherForcast;
-    (document.getElementById("cwTemp")! as HTMLElement).textContent = content.current.temp_c.toString() + "°C";
+    (document.getElementById("cwTemp")! as HTMLElement).textContent = content.location.name;
     (document.getElementById("cwCond")! as HTMLElement).textContent = content.current.condition.text;
-    (document.getElementById("cwCloud")! as HTMLElement).textContent = content.current.cloud.toString();
-    (document.getElementById("cwHumid")! as HTMLElement).textContent = content.current.humidity.toString();
+    (document.getElementById("cwCloud")! as HTMLElement).textContent = content.current.temp_c.toString() + "°C";
+    (document.getElementById("cwHumid")! as HTMLImageElement).setAttribute("src", content.current.condition.icon);
     city.value = "Budapest";
     
 }

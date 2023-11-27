@@ -61,6 +61,7 @@ nav > .nav-section:hover{
   height: 200px;
 }
 .weather-card{
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
