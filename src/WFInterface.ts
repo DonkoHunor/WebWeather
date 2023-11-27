@@ -1,3 +1,7 @@
+/**
+ * A weatherapi-által biztosított adatok feldolgozására szolgáló inteface
+ * Az API-val kapcsolatos teljes dokumentáció: {@link https://www.weatherapi.com/docs/}
+ */
 export interface WeatherForcast {
     location: Location
     current: Current
