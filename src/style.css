@@ -57,7 +57,6 @@ nav > .nav-section:hover{
   background-color: rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-columns: repeat(2);
   height: 200px;
 }
 .weather-card{
@@ -69,4 +68,14 @@ nav > .nav-section:hover{
 a{
   text-decoration-line: none;
   color: antiquewhite;
+}
+.container{
+  display: flex;
+}
+.location{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.weather-icon{
+  
 }
