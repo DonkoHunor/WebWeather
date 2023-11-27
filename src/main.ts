@@ -7,10 +7,10 @@ async function load(){
     console.log("Success?: " + result.ok);
     
     let content = await result.json() as WeatherForcast;
-    (document.getElementById("cwTemp")! as HTMLElement).textContent = content.current.temp_c.toString();
-    (document.getElementById("cwCond")! as HTMLElement).textContent = content.current.condition.text;
-    (document.getElementById("cwCloud")! as HTMLElement).textContent = content.current.cloud.toString();
-    (document.getElementById("cwHumid")! as HTMLElement).textContent = content.current.humidity.toString();
+    (document.getElementById("cwTemp")! as HTMLElement).textContent = "Current Temperature: " + content.current.temp_c.toString();
+    (document.getElementById("cwCond")! as HTMLElement).textContent = "Current Condition: " + content.current.condition.text;
+    (document.getElementById("cwCloud")! as HTMLElement).textContent = "Cloud Coverage: " + content.current.cloud.toString();
+    (document.getElementById("cwHumid")! as HTMLElement).textContent = "Air Humidity: " + content.current.humidity.toString();
     
 }
 
