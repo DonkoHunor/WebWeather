@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast</title>
+</head>
+<body>
+    <p>City: <input type="text" id="city"></p>
+    <button id="btn_forecast">Get weather</button>
+
+    <div class="display-weather">
+        <div class="weather-card" id="cwTemp"></div>
+        <div class="weather-card" id="cwCond"></div>
+        <div class="weather-card" id="cwCloud"></div>
+        <div class="weather-card" id="cwHumid"></div>
+      </div>
+      <p id="error"></p>
+
+    <script type="module" src="/src/forecast.ts"></script>
+</body>
+</html>
