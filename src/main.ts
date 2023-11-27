@@ -1,13 +1,12 @@
-import { CurrentWeather } from './CWInterface';
 import { WeatherForcast } from './WFInterface';
 import './style.css'
 
 async function load(){
-    let result = await fetch("https://api.weatherapi.com/v1/current.json?key=638048ba6a1345db95d145029232011&q=Budapest&aqi=no");
+    let result = await fetch("http://api.weatherapi.com/v1/forecast.json?key=638048ba6a1345db95d145029232011&q=Budapest&days=3&aqi=no&alerts=no");
     console.log("Status: " + result.status);
     console.log("Success?: " + result.ok);
     
-    let content = await result.json() as CurrentWeather;
+    let content = await result.json() as WeatherForcast;
     (document.getElementById("cwTemp")! as HTMLElement).textContent = content.current.temp_c.toString();
     (document.getElementById("cwCond")! as HTMLElement).textContent = content.current.condition.text;
     (document.getElementById("cwCloud")! as HTMLElement).textContent = content.current.cloud.toString();

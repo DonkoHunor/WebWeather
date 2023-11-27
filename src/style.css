@@ -43,14 +43,14 @@ nav > .nav-section{
   align-items: center;
 
   font-size: 1.4rem;
-  font-family: "Rubik", sans-serif;
+  font-family: "Monaco", monospace;
   font-weight: 500;
   color: var(--text-color);
 }
 nav > .nav-section:hover{
-  background-color: rgba(255, 195, 116, 0.2);
+  background-color: rgba(255, 195, 116, 0.35);
   transition: 200ms;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1.6rem;
 }
 .display-weather{
