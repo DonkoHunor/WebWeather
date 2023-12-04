@@ -18,7 +18,7 @@ let valid : boolean = true;
 /**
  * Megadja, hogy hány nappal kell előre jelezni az időjárást
  */
-let day_value : number = 3;
+let day_value : number = 1;
 
 /**
  * Az előrejelzés adatait tároló változó
