@@ -1,43 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style.css">
+    <!--<link rel="stylesheet" href="/src/style.css">-->
     <title>WebWeather</title>
   </head>
   <body>
-    <nav class="nav-box">
-      <div id="btnLogo" class="nav-logo">LOGO</div>
-      
-      <a href="./index.html" class="nav-section"><div>Current Weather</div></a>
-      <a href="./forecast.html" class="nav-section"><div>Weather Forecast</div></a>
-      <a href="./forecastPlus.html"  id="goFundMe" class="nav-section" style="color: rgb(255, 216, 42);"><div>Weather Forecast+</div></a>
+    <nav class="navbar bg-warning navbar-expand-md justify-content-center mb-3 p-2">
+      <img class="navbar-brand text-dark" src="./public/WWLogo.png" style="height: 50px;"></img>
+      <div class="container-fluid">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link text-dark" href="./index.html">Current Weather</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark" href="./forecast.html">Weather Forecast</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark" href="./forecastPlus.html">Contact Us</a>
+              </li>
+          </ul>
+      </div>
     </nav>
-
-    <!--
-    Ez mi???????
-    <div class="container">
-      <div class="location">
-        <img src="" class="weather-icon">
-        <div id="wCondition">asdasd</div>
-        <div id="wTemp">asd</div>
-        <div id="wLocation">asdasdasd</div>
-      </div>
-      <div class="weather-details">
-        <div id="wFeelsLike">23fok</div>
-        <div id="wWind">10kmph</div>
-        <div id="wCloud">10%</div>
-        <div id="wUV">25</div>
-      </div>
-    </div>
-     -->
      
-    <div class="display-weather">
-      <div class="weather-card" id="cwCity"></div>
-      <div class="weather-card" id="cwCond"></div>
-      <div class="weather-card" id="cwTemp"></div>
-      <div class="weather-card"><img src="" id="cwIcon" style="height: 200px;"></div>
+    <div class="container w-50">
+      <div class="card" style="background-color: rgba(0,0,0,0.4);">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <div id="cwCity"></div>
+            </div>
+            <div class="col-3">
+              <div id="cwCond"></div>
+              <div><img src="" id="cwIcon" style="height: 200px;"></div>
+            </div>
+            <div class="col-3">
+              <div id="cwTemp"></div>
+            </div>
+            <div class="col-3">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="/src/main.ts"></script>

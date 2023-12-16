@@ -1,5 +1,8 @@
 import { WeatherForcast } from './WFInterface';
-import './style.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.js';
+import './background.css';
+//import './style.css';
 
 /**
  * Ez a function kéri le az adatokat, az API-tól az oldal betöltésekor 
