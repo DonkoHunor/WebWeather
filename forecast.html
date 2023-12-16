@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar bg-warning navbar-expand-md justify-content-center mb-3 p-2">
-        <img class="navbar-brand text-dark" src="./public/WWLogo.png" style="height: 50px;"></img>
+        <img class="navbar-brand text-dark" src="/WWLogo.png" style="height: 50px;"></img>
         <div class="container-fluid">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -35,7 +35,7 @@
             <div class="col-9">
                 <input id="input_hour" class="form-range" type="range" step="1" min="0" max="23">
             </div>
-            <div class="col-3">
+            <div class="col-auto">
                 <label class="display-5" for="input_hour" id="hour_value"></label>
             </div>
         </div>
@@ -48,17 +48,23 @@
                     <div class="btn btn-warning" id="btn_twoDays">Two days later</div>
                 </div>
                 <div class="row m-2">
-                    <div class="col-3">
-                        <p id="cwTemp" class="display-5"></p>
+                    <div class="col-auto">
+                        <p id="temp" class="display-5"></p>
                     </div>
-                    <div class="col-3">
-                        <p id="cwCond" class="display-5"></p>
+                    <div class="col-1">
+                        <img src="" id="icon">
                     </div>
-                    <div class="col-3">
-                        <p id="cwCloud" class="display-5"></p>
+                    <div class="col-auto">
+                        <p id="condition" class="display-5"></p>
                     </div>
-                    <div class="col-3">
-                        <p id="cwHumid" class="display-5"></p>
+                    <div class="col-auto">
+                        <p class="display-5">Clouds:</p>
+                    </div>
+                    <div class="col-auto">
+                        <p id="cloud" class="display-5"></p>
+                    </div>
+                    <div class="col-auto">
+                        <p id="humidity" class="display-5"></p>
                     </div>
                 </div>
                 <p id="error"></p>
