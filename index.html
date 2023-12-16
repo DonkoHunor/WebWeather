@@ -24,27 +24,34 @@
       </div>
     </nav>
      
-    <div class="container w-50">
-      <div class="card" style="background-color: rgba(0,0,0,0.4);">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-3">
-              <div id="cwCity"></div>
-            </div>
-            <div class="col-3">
-              <div id="cwCond"></div>
-              <div><img src="" id="cwIcon" style="height: 200px;"></div>
-            </div>
-            <div class="col-3">
-              <div id="cwTemp"></div>
-            </div>
-            <div class="col-3">
-            </div>
-          </div>
-        </div>
+    <div class="container justify-content-center w-50 p-2" style="background-color: rgba(0,0,0,0.4);">
+      <div class="input-group mb-3 input-group-lg">
+          <label for="city" class="input-group-text">City :</label>
+          <input class="form-control" type="text" id="city">
+          <button id="btn_forecast" class="btn btn-warning">Get Current Weather</button>
       </div>
-    </div>
+      
+      <div class="card">
+          <div class="card-body p-0">
+              <div class="row m-2">
+                  <div class="col-3">
+                      <p id="cwTemp" class="display-5"></p>
+                  </div>
+                  <div class="col-3">
+                      <p id="cwCond" class="display-5"></p>
+                  </div>
+                  <div class="col-3">
+                      <p id="cwCloud" class="display-5"></p>
+                  </div>
+                  <div class="col-3">
+                      <p id="cwHumid" class="display-5"></p>
+                  </div>
+              </div>
+              <p id="error"></p>
+          </div>
+      </div>
+  </div>
 
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/forecast.ts"></script>
   </body>
 </html>
