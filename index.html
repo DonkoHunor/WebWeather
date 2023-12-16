@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<link rel="stylesheet" href="/src/style.css">-->
     <title>WebWeather</title>
+    <!--<link href="https://fonts.cdnfonts.com/css/ocr-a-std" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'OCR A Std', monospace;
+      }
+    </style>-->
   </head>
   <body>
     <nav class="navbar bg-warning navbar-expand-md justify-content-center mb-3 p-2">
@@ -28,30 +34,45 @@
       <div class="input-group mb-3 input-group-lg">
           <label for="city" class="input-group-text">City :</label>
           <input class="form-control" type="text" id="city">
-          <button id="btn_forecast" class="btn btn-warning">Get Current Weather</button>
+          <button id="btn_current" class="btn btn-warning">Get Current Weather</button>
       </div>
-      
+      <hr>
+      <p id="error" class="text-danger h6"></p>
+      <p class="h4" id="displayCity"></p>
       <div class="card">
           <div class="card-body p-0">
               <div class="row m-2">
-                  <div class="col-3">
-                      <p id="cwTemp" class="display-5"></p>
-                  </div>
-                  <div class="col-3">
-                      <p id="cwCond" class="display-5"></p>
-                  </div>
-                  <div class="col-3">
-                      <p id="cwCloud" class="display-5"></p>
-                  </div>
-                  <div class="col-3">
-                      <p id="cwHumid" class="display-5"></p>
-                  </div>
+                <div class="col-2">
+                  <p id="temp" class="display-6"></p>
+                </div>
+                <div class="d-flex col-10">
+                  <img id="icon"></img>
+                  <p id="condition" class="display-6"></p>
+                </div>
               </div>
-              <p id="error"></p>
+              <hr>
+              <div class="row m-2">
+                <div class="col-6">
+                  <p id="cloud" class="display-6"></p>
+                </div>
+                <div class="col-6">
+                  <p id="humidity" class="display-6"></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row m-2">
+                <div class="col-6">
+                  <p id="wind" class="display-6"></p>
+                </div>
+                <div class="col-6">
+                  <p id="" class="display-6"></p>
+                </div>
+              </div>
+              
           </div>
       </div>
   </div>
 
-    <script type="module" src="/src/forecast.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
