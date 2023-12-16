@@ -24,11 +24,11 @@
                   <a class="nav-link text-dark" href="./forecast.html">Weather Forecast</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-dark" href="./forecastPlus.html">Contact Us</a>
+                  <a class="nav-link text-dark" href="./contactUs.html">Contact Us</a>
               </li>
           </ul>
-      </div>
-    </nav>
+        </div>
+      </nav>
      
     <div class="container justify-content-center w-50 p-2" style="background-color: rgba(0,0,0,0.4);">
       <div class="input-group mb-3 input-group-lg">
@@ -37,35 +37,31 @@
           <button id="btn_current" class="btn btn-warning">Get Current Weather</button>
       </div>
       <hr>
-      <p id="error" class="text-danger h6"></p>
-      <p class="h4" id="displayCity"></p>
+      <p id="error" class="text-danger h4"></p>
+      <p class="h4" id="displayCountry"></p>
+      <p class="h4" id="displayTime"></p>
       <div class="card">
           <div class="card-body p-0">
               <div class="row m-2">
-                <div class="col-2">
-                  <p id="temp" class="display-6"></p>
-                </div>
-                <div class="d-flex col-10">
-                  <img id="icon"></img>
-                  <p id="condition" class="display-6"></p>
-                </div>
-              </div>
-              <hr>
-              <div class="row m-2">
                 <div class="col-6">
+                  <p id="tempActual" class="display-6"></p>
+                </div>
+                <div class="col-6">
+                  <p id="tempFeels" class="display-6"></p>
+                </div>
+                <div class="d-flex col-12">
+                  <p id="condition" class="display-6"></p>
+                  <img id="icon"></img>
+                </div>
+                <hr>
+                <div class="col-12">
                   <p id="cloud" class="display-6"></p>
                 </div>
-                <div class="col-6">
+                <div class="col-12">
                   <p id="humidity" class="display-6"></p>
                 </div>
-              </div>
-              <hr>
-              <div class="row m-2">
                 <div class="col-6">
                   <p id="wind" class="display-6"></p>
-                </div>
-                <div class="col-6">
-                  <p id="" class="display-6"></p>
                 </div>
               </div>
               

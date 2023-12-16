@@ -38,13 +38,15 @@ export async function Forcast() {
   await GetWeather();
   console.log(content.location.name);
   if(valid){
-    (document.getElementById("displayCity")! as HTMLElement).textContent = "Country: " + content.location.country;
-    (document.getElementById("temp")! as HTMLElement).textContent = content.current.temp_c + "°C  ";
+    (document.getElementById("displayCountry")! as HTMLElement).textContent = "Country: " + content.location.country;
+    (document.getElementById("displayTime")! as HTMLElement).textContent = "Local Time: " + content.location.localtime;
+    (document.getElementById("tempActual")! as HTMLElement).textContent = "Temperature: " + content.current.temp_c + "°C  ";
+    (document.getElementById("tempFeels")! as HTMLElement).textContent = "Feels Like: " + content.current.temp_c + "°C  ";
     (document.getElementById("icon")! as HTMLImageElement).src = content.current.condition.icon;
     (document.getElementById("condition")! as HTMLElement).textContent = content.current.condition.text;
     (document.getElementById("cloud")! as HTMLElement).textContent = "Cloud Coverage: " + content.current.cloud + "%";
     (document.getElementById("humidity")! as HTMLElement).textContent = "Humidity: " + content.current.humidity + "%";
-    (document.getElementById("wind")! as HTMLElement).textContent = "Wind Speed: " + content.current.wind_kph + "kph";
+    (document.getElementById("wind")! as HTMLElement).textContent = "Wind Speed: " + content.current.wind_kph + " km/h";
     city.value = content.location.name;
     (document.getElementById('error') as HTMLElement).textContent = "";
   }  
@@ -61,9 +63,11 @@ export async function GetWeather(){
   console.log("Success?: " + result.ok);
 
   let error = document.getElementById('error') as HTMLElement;
+  let country = document.getElementById('displayCountry') as HTMLElement;
 
   if(!result.ok){
     error.textContent = "There is no such city(probably a spelling mistake)";
+    country.textContent = "";
     valid = false;
     throw Error("There is no such city(probably a spelling mistake)");
   }
