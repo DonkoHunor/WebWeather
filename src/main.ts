@@ -25,6 +25,18 @@ let content : WeatherForcast;
 
 document.getElementById('btn_current')!.addEventListener('click',Forcast);
 
+function BackgroundChange(){
+  const time = (content.location.localtime.split(' ')[1]);
+  let num = parseInt(time.split(':')[0].toString() + time.split(':')[1].toString());
+  console.log(num)
+  if (num < 550 || num > 2000){
+    document.body.style.backgroundImage = "url('night.png')";
+  }else if (num < 1100 || num > 1600){
+    document.body.style.backgroundImage = "url('mid.png')";
+  }else{
+    document.body.style.backgroundImage = "url('day.png')";
+  }
+}
 
 /**
  * Ellenörzi, hogy a {@link city} változónak van-e értéke és frissíti a megjelenített adatokat, valamint a meghívja a {@link Value} function-t
@@ -34,10 +46,11 @@ export async function Forcast() {
   if(city.value.trim().length < 1){
   city.value = "Budapest";
   }
-  
+
   await GetWeather();
   console.log(content.location.name);
   if(valid){
+    BackgroundChange();
     (document.getElementById("displayCountry")! as HTMLElement).textContent = "Country: " + content.location.country;
     (document.getElementById("displayTime")! as HTMLElement).textContent = "Local Time: " + content.location.localtime;
     (document.getElementById("tempActual")! as HTMLElement).textContent = "Temperature: " + content.current.temp_c + "°C  ";
@@ -51,6 +64,7 @@ export async function Forcast() {
     (document.getElementById('error') as HTMLElement).textContent = "";
   }  
 }
+
 
 /**
  * Lekéri a napnak megfelelő időjárás előrejelzést és megnézi, hogy sikeres-e
