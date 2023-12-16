@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+    background-image: url("/rain.gif");
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-size: cover;
+    color: white;
+  }
+
+nav{
+    background-color: #D7A100;
+}

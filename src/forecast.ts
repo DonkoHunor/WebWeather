@@ -1,4 +1,7 @@
 import { WeatherForcast } from './WFInterface';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.js'
+import './forecast.css'
 
 /**
  * Az API elérési link-je a kulcsal együtt
@@ -46,7 +49,7 @@ let btn_tomorrow = document.getElementById('btn_tomorrow') as HTMLElement;
 let btn_twoDays = document.getElementById('btn_twoDays') as HTMLElement;
 
 document.getElementById('btn_forecast')!.addEventListener('click',Forcast);
-document.getElementById('input_hour')!.addEventListener('change',Forcast);
+document.getElementById('input_hour')!.addEventListener('input',Forcast);
 
 btn_today?.addEventListener('click',async () => {
   day_value = 1
