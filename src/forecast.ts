@@ -84,9 +84,22 @@ export async function Forcast() {
     (document.getElementById("temp")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].temp_c.toString() + "°C  ";
     (document.getElementById("icon")! as HTMLImageElement).src = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.icon;
     (document.getElementById("condition")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.text;
-    (document.getElementById("rain")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].chance_of_rain + "%";
-    (document.getElementById("humidity")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].humidity.toString() + "%";
+    (document.getElementById("rain")! as HTMLElement).textContent = "Rain chance: " + content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].chance_of_rain + "%";
+    (document.getElementById("humidity")! as HTMLElement).textContent = "Humidity: " + content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].humidity.toString() + "%";
+    (document.getElementById("wind")! as HTMLElement).textContent = "Wind Speed: " + content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].wind_kph.toString() + " km/h";
+    (document.getElementById("windDir")! as HTMLElement).textContent = "Wind Direction: " + content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].wind_dir.toString();
+    (document.getElementById("tempAvg")! as HTMLElement).textContent = "Avg: " + content.forecast.forecastday[day_value-1].day.avgtemp_c.toString() + "°C";
+    (document.getElementById("tempMax")! as HTMLElement).textContent = "Max: " + content.forecast.forecastday[day_value-1].day.maxtemp_c.toString() + "°C";
+    (document.getElementById("tempMin")! as HTMLElement).textContent = "Min: " + content.forecast.forecastday[day_value-1].day.mintemp_c.toString() + "°C";
+    (document.getElementById("uv")! as HTMLElement).textContent = "UV: " + content.forecast.forecastday[day_value-1].day.uv.toString();
+    (document.getElementById("sunrise")! as HTMLElement).textContent = "Sunrise: " + content.forecast.forecastday[day_value-1].astro.sunrise.toString();
+    (document.getElementById("sunset")! as HTMLElement).textContent = "Sunset: " + content.forecast.forecastday[day_value-1].astro.sunset.toString();
+    (document.getElementById("moon")! as HTMLElement).textContent = "Moon phase: " + content.forecast.forecastday[day_value-1].astro.moon_phase.toString();
+    (document.getElementById("moonIll")! as HTMLElement).textContent = "Moon illumination: " + content.forecast.forecastday[day_value-1].astro.moon_illumination.toString();
+    (document.getElementById("moonrise")! as HTMLElement).textContent = "Moonrise: " + content.forecast.forecastday[day_value-1].astro.moonrise.toString();
+    (document.getElementById("moonset")! as HTMLElement).textContent = "Moonset: " + content.forecast.forecastday[day_value-1].astro.moonset.toString();
     city.value = content.location.name;
+    (document.getElementById('country')! as HTMLElement).textContent = "Country: " + content.location.country;
     (document.getElementById('error') as HTMLElement).textContent = "";
   }  
 }
@@ -104,9 +117,10 @@ export async function GetWeather(days:number){
   let error = document.getElementById('error') as HTMLElement;
 
   if(!result.ok){
-    error.textContent = "There is no such city(probably a spelling mistake)";
+    error.textContent = "There is no such city (probably a spelling mistake)";
+    (document.getElementById('country')! as HTMLElement).textContent = "";
     valid = false;
-    throw Error("There is no such city(probably a spelling mistake)");
+    throw Error("There is no such city (probably a spelling mistake)");
   }
   content = await result.json() as WeatherForcast;
   valid = true;
