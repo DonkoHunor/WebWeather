@@ -29,9 +29,9 @@ function BackgroundChange(){
   const time = (content.location.localtime.split(' ')[1]);
   let num = parseInt(time.split(':')[0].toString() + time.split(':')[1].toString());
   console.log(num)
-  if (num < 550 || num > 2000){
+  if (num < 550 || num > 1900){
     document.body.style.backgroundImage = "url('night.png')";
-  }else if (num < 1100 || num > 1600){
+  }else if (num < 1000 || num > 1500){
     document.body.style.backgroundImage = "url('mid.png')";
   }else{
     document.body.style.backgroundImage = "url('day.png')";

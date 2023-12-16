@@ -64,6 +64,17 @@ btn_twoDays?.addEventListener('click',async () => {
   await Forcast();
 })
 
+function BackgroundChange(){
+  const time = parseInt(hour.value);
+  if (time < 5 || time > 19){
+    document.body.style.backgroundImage = "url('night.png')";
+  }else if (time < 10 || time > 15){
+    document.body.style.backgroundImage = "url('mid.png')";
+  }else{
+    document.body.style.backgroundImage = "url('day.png')";
+  }
+}
+
 /**
  * Ellenörzi, hogy a {@link city} változónak van-e értéke és frissíti a megjelenített adatokat, valamint a meghívja a {@link Value} function-t
  */
@@ -79,6 +90,7 @@ export async function Forcast() {
   console.log(content.location.name);
   
   if(valid){
+    BackgroundChange();
     (document.getElementById("temp")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].temp_c.toString() + "°C  ";
     (document.getElementById("icon")! as HTMLImageElement).src = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.icon;
     (document.getElementById("condition")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.text;
