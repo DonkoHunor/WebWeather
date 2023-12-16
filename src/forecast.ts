@@ -81,10 +81,11 @@ export async function Forcast() {
   console.log(content.location.name);
   
   if(valid){
-    (document.getElementById("cwTemp")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].temp_c.toString() + "°C  ";
-    (document.getElementById("cwCond")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.text;
-    (document.getElementById("cwCloud")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].cloud.toString();
-    (document.getElementById("cwHumid")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].humidity.toString();
+    (document.getElementById("temp")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].temp_c.toString() + "°C  ";
+    (document.getElementById("icon")! as HTMLImageElement).src = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.icon;
+    (document.getElementById("condition")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].condition.text;
+    (document.getElementById("cloud")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].cloud.toString();
+    (document.getElementById("humidity")! as HTMLElement).textContent = content.forecast.forecastday[day_value-1].hour[parseInt(hour.value)].humidity.toString();
     city.value = content.location.name;
     (document.getElementById('error') as HTMLElement).textContent = "";
   }  
