@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="./src/style.css">-->
-    <title>Forecast</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>WebWeather-Forecast</title>
 </head>
 <body>
     <nav class="navbar bg-warning navbar-expand-md justify-content-center mb-3 p-2">
@@ -31,6 +31,11 @@
             <button id="btn_forecast" class="btn btn-warning">Get Forecast</button>
         </div>
 
+        
+        <p id="error" class="text-danger h4"></p>
+        <p id="country" class="h4"></p>
+        <hr>
+
         <div class="row align-items-center">
             <div class="col-9">
                 <input id="input_hour" class="form-range" type="range" step="1" min="0" max="23">
@@ -39,39 +44,80 @@
                 <label class="display-5" for="input_hour" id="hour_value"></label>
             </div>
         </div>
-        
-        <div class="card">
+
+        <div class="card" style="background-color: rgba(0,0,0,0.4);">
             <div class="card-body p-0">
-                <div class="btn-group btn-group-lg">
+                <div class="btn-group btn-group-lg mb-3">
                     <div class="btn btn-warning" id="btn_today">Today</div>
                     <div class="btn btn-warning" id="btn_tomorrow">Tomorrow</div>
                     <div class="btn btn-warning" id="btn_twoDays">Two days later</div>
                 </div>
                 <div class="row m-2">
-                    <div class="col-2">
+                    <div class="col-12">
                         <p id="temp" class="display-5"></p>
                     </div>
-                    <div class="d-flex col-10">
-                        <img class="" src="" id="icon">
+                    <div class="d-flex col-12">
                         <p id="condition" class="display-5"></p>
+                        <img class="" src="" id="icon">
                     </div>
                 </div>
                 <hr>
                 <div class="row m-2">
-                    <div class="col-auto">
-                        <p class="display-5">Humidity:</p>
-                    </div>
-                    <div class="col-auto">
-                        <p id="humidity" class="display-5"></p>
-                    </div>
-                    <div class="col-auto">
-                        <p class="display-5">Rain chance:</p>
-                    </div>
-                    <div class="col-2">
+                    <div class="col-12">
                         <p id="rain" class="display-5"></p>
                     </div>
+                    <div class="col-12">
+                        <p id="humidity" class="display-5"></p>
+                    </div>        
                 </div>
-                <p id="error"></p>
+                <hr>
+                <div class="row m-2">
+                    <div class="col-12">
+                        <p id="wind" class="display-5"></p>
+                    </div>                 
+                    <div class="col-12">
+                        <p id="windDir" class="display-5"></p>
+                    </div>  
+                </div>
+                <hr>
+                <div class="row m-2">
+                    <div class="col-12">
+                        <p id="tempAvg" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="tempMax" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="tempMin" class="display-5"></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row m-2">
+                    <div class="col-12">
+                        <p id="uv" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="sunrise" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="sunset" class="display-5"></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row m-2">
+                    <div class="col-12">
+                        <p id="moon" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="moonIll" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="moonrise" class="display-5"></p>
+                    </div>
+                    <div class="col-12">
+                        <p id="moonset" class="display-5"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
