@@ -64,6 +64,9 @@ btn_twoDays?.addEventListener('click',async () => {
   await Forcast();
 })
 
+/**
+ * A megadott órához képest váltja az oldal hátterét.
+ */
 function BackgroundChange(){
   const time = parseInt(hour.value);
   if (time < 5 || time > 19){

@@ -25,6 +25,9 @@ let content : WeatherForcast;
 
 document.getElementById('btn_current')!.addEventListener('click',Forcast);
 
+/**
+ * Az API által megadott helyi idő szerint váltja az oldal hátterét.
+ */
 function BackgroundChange(){
   const time = (content.location.localtime.split(' ')[1]);
   let num = parseInt(time.split(':')[0].toString() + time.split(':')[1].toString());
